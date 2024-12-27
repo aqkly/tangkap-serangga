@@ -1,0 +1,141 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    background-color: #d0caf3;
+    color:#ffff;
+    flex-direction:column;
+    height:100vh;
+    margin:0;
+    overflow: hidden;
+    text-align: center;
+}
+
+h1{
+    line-height: 1.4;
+}
+
+.screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: margin 0.75s linear;
+    height: 100vh;
+    width: 100vw;
+}
+
+.screen.up{
+    margin-top: -100vh;
+}
+
+.btn{
+    border: 0;
+    background-color: #fff;
+    color:#d0caf3;
+    cursor: pointer;
+    padding:15px 20px;
+}
+
+.btn-hover{
+    opacity: 0.9;
+}
+
+.btn:active{
+    opacity: 0.7;
+}
+
+.serangga_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.serangga_list li{
+    margin: 10px;
+}
+
+.pilih_serangga_btn{
+    background: transparent;
+    border:2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+}
+
+.pilih_serangga_btn:hover{
+    background-color: #fff;
+    color:#d0caf3;
+}
+
+.pilih_serangga_btn:active{
+    background-color: #fff;
+}
+
+.pilih_serangga_btn img{
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.game_container{
+    position: relative;
+}
+
+#score{
+    top:20px;
+    position: absolute;
+}
+
+@media screen and (max-width:480px){
+    #score{
+        font-size: 12px;
+    }
+}
+
+#score{
+    right: 20px;
+}
+
+#pesan{
+    line-height: 1.6;
+    position:absolute;
+    top:0;
+    left:50%;
+    transition: transform 0.4s ease-in;
+    transform: translate(-50%, -150%);
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+}
+
+#pesan.visible{
+    transform:translate(-50%, 100%);
+    opacity: 1;
+}
+
+.serangga{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform:translate(-50%,-50%) scale(1);
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease-out;
+}
+
+.serangga.tertangkap{
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.serangga img{
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+}
